@@ -1,0 +1,38 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+  datasource:
+    url: jdbc:postgresql://localhost:5432/restaurant
+    username: postgres
+    password: Joa@2000
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+
+uploadDir: "C:\\Users\\jjanku\\Desktop\\Restaurant MVC\\target\\classes\\static\\images\\"
+confirmUrl: "http://localhost:8080/user/confirm-account?token="
+minLength: 3
+
+---
+spring:
+  config:
+    activate:
+      on-profile: production
+  datasource:
+    url: jdbc:postgresql://ec2-54-74-60-70.eu-west-1.compute.amazonaws.com:5432/d639n3gg6jjt6f
+    username: edpiobaaqwrfcz
+    password: 629c24e25de215b80eb184b2fbbcc119e45c70f4a2ca38e76ac0a25f9ea9ef38
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+
+uploadDir: "C:\\Users\\jjanku\\Desktop\\Restaurant MVC\\target\\classes\\static\\images\\"
+confirmUrl: "http://localhost:8080/user/confirm-account?token="
+minLength: 3

@@ -1,0 +1,1388 @@
+{
+	"info": {
+		"_postman_id": "c662ac74-c77a-458d-a628-5e87c94ef281",
+		"name": "Side Projects",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Restaurant Management Project",
+			"item": [
+				{
+					"name": "CITY",
+					"item": [
+						{
+							"name": "Save City",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"City\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find city",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city?id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete City",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/city?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CITY FILTER",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"fieldValuePair\" : [\r\n       { \r\n           \"field\" : \"name\" ,\r\n          \"value\" : \"Tirana\"\r\n       }\r\n       \r\n    ],\r\n    \"orderBy\":\"id\",\r\n    \"sortDirection\":\"desc\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/city/filter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"city",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ROLE",
+					"item": [
+						{
+							"name": "Save Role",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"role\":\"user\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/roles/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find Role By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roles?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Role",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/roles?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "Save User",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fullname\":\"Joan Janku\",\r\n    \"phoneNumber\" : \"0695474025\",\r\n    \"roleId\": 1,\r\n    \"address\":\"bsabsd\",\r\n    \"email\":\"joan.janku@fti.edu.al\",\r\n    \"password\":\"dowcno\",\r\n    \"cityId\":1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND USER",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user?id=2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE USER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/user/delete?id=17",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "17"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE USER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"email@email.com\",\r\n    \"password\":\"1234\",\r\n    \"phoneNumber\":\"0695474025\",\r\n    \"cityId\": 1,\r\n    \"address\":\"Rruga Gramoz Pashko\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/user/update?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"update"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND ALL USERS",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/user/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "SHOW ALL SELLERS",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/user/sellers",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"user",
+										"sellers"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "INGREDIENT",
+					"item": [
+						{
+							"name": "Save Ingredient",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"sausage\",\r\n    \"calories\":30.5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/ingredient/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ingredient",
+										"save"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND INGREDIENT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/ingredient?id=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ingredient"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND INGREDIENT BY NAME",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/ingredient/find/tomat",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ingredient",
+										"find",
+										"tomat"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE INGREDIENT",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/ingredient/delete?id=1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"ingredient",
+										"delete"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ITEM",
+					"item": [
+						{
+							"name": "SAVE ITEM",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "Content-type",
+											"value": "multipart/form-data",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "picture",
+											"contentType": "multipart/form-data",
+											"type": "file",
+											"src": "/C:/Users/jjanku/Downloads/1234.jpg"
+										},
+										{
+											"key": "itemCreateRequest",
+											"value": "{\n    \"name\":\"Just a dish\",\n    \"description\":\"description\",\n    \"price\":35288.3,\n    \"ingredientIds\":[1,2,3]\n}",
+											"contentType": "application/json",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/save",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"save"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND ITEM",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"dish\",\r\n    \"description\":\"kdabada\",\r\n    \"price\":12.34,\r\n    \"sellerId\":1,\r\n    \"ingredientIds\":[1]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item?id=46",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "46"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND ITEMS OF SELLER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/item/seller/15?pageSize=3&pageNumber=0&sort=price&sortDirection=desc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"seller",
+										"15"
+									],
+									"query": [
+										{
+											"key": "pageSize",
+											"value": "3"
+										},
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "sort",
+											"value": "price"
+										},
+										{
+											"key": "sortDirection",
+											"value": "desc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE ITEM",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/item/delete/41",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"delete",
+										"41"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE ITEM",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Hamburger\",\r\n    \"description\":\"Fast Food\",\r\n    \"price\":25.2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/update/41",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"update",
+										"41"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD INGREDIENTS",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ingredientIds\":[1,2,3]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/ingredients/48",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"ingredients",
+										"48"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE INGREDIENT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/item/48/ingredients/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"48",
+										"ingredients",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ADD-INGREDIENT",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/add-ingredient?itemId=41&ingredientId=3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"add-ingredient"
+									],
+									"query": [
+										{
+											"key": "itemId",
+											"value": "41"
+										},
+										{
+											"key": "ingredientId",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ITEMS OF (LOGGED) SELLER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/item/items?pageNumber=0&pageSize=3&sort=price&sortDirection=asc",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"items"
+									],
+									"query": [
+										{
+											"key": "pageNumber",
+											"value": "0"
+										},
+										{
+											"key": "pageSize",
+											"value": "3"
+										},
+										{
+											"key": "sort",
+											"value": "price"
+										},
+										{
+											"key": "sortDirection",
+											"value": "asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ITEM FILTER",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"fieldValuePair\" : [\r\n    \r\n       {\r\n           \"field\":\"price\",\r\n           \"value\" : 13,\r\n           \"operation\":\"greaterThanOrEqualTo\"\r\n       }\r\n       \r\n    ],\r\n    \"orderBy\":\"price\",\r\n    \"sortDirection\":\"asc\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/item/filter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"item",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ORDER",
+					"item": [
+						{
+							"name": "PLACE ORDER",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/place?itemId=41",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"place"
+									],
+									"query": [
+										{
+											"key": "itemId",
+											"value": "41"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND ORDER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders?id=18",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "18"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FEEDBACK",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/18/feedeback/Great one for real am not joking",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"18",
+										"feedeback",
+										"Great one for real am not joking"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELIVER",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/deliver/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"deliver",
+										"20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "FIND ORDERS OF USER (aka my-orders)",
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/orders/my-orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"my-orders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ORDER FILTER",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "basic",
+									"basic": [
+										{
+											"key": "password",
+											"value": "1234",
+											"type": "string"
+										},
+										{
+											"key": "username",
+											"value": "janku.joan4@gmail.commmmm",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fieldValuePair\" : [\r\n    \r\n       {\r\n           \"field\":\"feedback\",\r\n           \"value\" : 7,\r\n           \"operation\":\"lessThanOrEqualTo\"\r\n\r\n       }\r\n       \r\n    ]\r\n    ,\r\n\r\n    \"orderBy\":\"dateTime\",\r\n    \"sortDirection\":\"asc\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders/filter",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders",
+										"filter"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "joan.janku@fti.edu.al",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "1234",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "REFRESH TOKEN",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqYW5rdS5qb2FuNEBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvbG9naW4iLCJleHAiOjE2Mjk3MDc1ODB9.uyemfH1Ydeq6xnMZx1LHycB_oH68ZdoARlf4aCxDLhQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/user/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
